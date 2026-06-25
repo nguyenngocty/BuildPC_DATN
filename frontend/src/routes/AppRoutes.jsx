@@ -1,13 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 
-import Home from "../views/pages/Home/Home";
 import Checkout from "../views/pages/Checkout/Checkout";
+import Home from "../views/pages/Home/Home";
+import Auth from "../views/pages/Auth/Auth";
+import Cart from "../views/pages/Cart/Cart";
 
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/checkout" element={<Checkout />} />
+      <Route path="/auth" element={<Auth />} />
+      <Route path="/cart" element={<Cart />} />
+
     </Routes>
   );
 }
