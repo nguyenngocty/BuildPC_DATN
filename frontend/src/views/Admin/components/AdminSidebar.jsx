@@ -23,6 +23,11 @@ const menuItems = [
     icon: "bi-people",
   },
   {
+    label: "Bài viết",
+    to: "/admin/posts",
+    icon: "bi-people",
+  },
+  {
     label: "Mã giảm giá",
     to: "/admin/coupons",
     icon: "bi-ticket-perforated",

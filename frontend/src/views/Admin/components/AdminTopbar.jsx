@@ -29,24 +29,25 @@ function AdminTopbar({
   onOpenAccountInfo,
   onOpenLogout,
 }) {
-  const accountDropdownRef = useRef(null);
+  const accountMenuRef = useRef(null);
 
   useEffect(() => {
-    const handleOutsideClick = (event) => {
+    const handleClickOutside = (event) => {
       if (
-        accountDropdownRef.current &&
-        !accountDropdownRef.current.contains(event.target)
+        isAccountOpen &&
+        accountMenuRef.current &&
+        !accountMenuRef.current.contains(event.target)
       ) {
         onCloseAccount();
       }
     };
 
-    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [onCloseAccount]);
+  }, [isAccountOpen, onCloseAccount]);
 
   return (
     <header className="admin-topbar">
@@ -95,10 +96,7 @@ function AdminTopbar({
           <i className="bi bi-bell-fill" />
         </button>
 
-        <div
-          className="account-dropdown"
-          ref={accountDropdownRef}
-        >
+        <div className="account-dropdown" ref={accountMenuRef}>
           <button
             className={`admin-user ${isAccountOpen ? "active" : ""}`}
             type="button"
