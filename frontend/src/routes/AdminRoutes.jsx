@@ -13,7 +13,7 @@ function AdminRoutes() {
       <Route element={<AdminLayout />}>
         {/* /admin */}
         <Route index element={<AdminDashboard />} />
-
+ 
         {/* /admin/products */}
         <Route path="products" element={<ProductManagement />} />
 
