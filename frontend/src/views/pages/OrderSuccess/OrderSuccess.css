@@ -1,0 +1,137 @@
+.success-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 20px;
+}
+
+.success-card {
+  background: white;
+  width: 100%;
+  max-width: 650px;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+
+.success-card h1 {
+  color: #16a34a;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.success-desc {
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.success-box {
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.success-box p {
+  margin: 10px 0;
+  color: #374151;
+  font-size: 14px;
+}
+
+.success-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-home,
+.btn-shop {
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-home {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-home:hover {
+  background: #1d4ed8;
+}
+
+.btn-shop {
+  border: 1px solid #2563eb;
+  color: #2563eb;
+}
+
+.btn-shop:hover {
+  background: #2563eb;
+  color: white;
+}
+.btn-detail {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  border: 1px solid #16a34a;
+  color: #16a34a;
+}
+
+.btn-detail:hover {
+  background: #16a34a;
+  color: white;
+}
+.success-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Vòng tròn */
+.checkmark-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pop 0.4s ease-in-out;
+}
+
+/* Dấu tích */
+.checkmark {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+/* Animation */
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

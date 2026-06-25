@@ -1,10 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Checkout.css";
 
 const Checkout = () => {
+  const navigate = useNavigate();
+
+  const handleOrder = () => {
+    // (tuỳ chọn) clear giỏ hàng
+    // localStorage.removeItem("cart");
+
+    navigate("/order-success");
+  };
+
   return (
     <div className="checkout-container">
-
       {/* Breadcrumb */}
       <div className="cart-breadcrumb">
         <nav>
@@ -24,68 +32,73 @@ const Checkout = () => {
         </nav>
       </div>
 
+      {/* Header */}
       <div className="checkout-header">
-        <h1>Thanh Toán</h1>
-        <p>Hoàn tất đơn hàng xây dựng PC của bạn</p>
+        <h1>Xác Nhận Đơn Hàng</h1>
+        <p>
+          Vui lòng kiểm tra thông tin nhận hàng và phương thức thanh toán
+          trước khi hoàn tất đơn hàng.
+        </p>
       </div>
 
       <div className="checkout-content">
-        {/* Left */}
+        {/* Form khách hàng */}
         <div className="checkout-form">
-          <h2>Thông tin khách hàng</h2>
+          <h2>Thông Tin Nhận Hàng</h2>
 
           <div className="form-group">
-            <label>Họ và tên</label>
-            <input type="text" placeholder="Nhập họ tên" />
+            <label>Họ và tên người nhận</label>
+            <input type="text" placeholder="Nguyễn Văn A" />
           </div>
 
           <div className="form-group">
-            <label>Số điện thoại</label>
-            <input type="text" placeholder="Nhập số điện thoại" />
+            <label>Số điện thoại liên hệ</label>
+            <input type="text" placeholder="09xxxxxxxx" />
           </div>
 
           <div className="form-group">
             <label>Email</label>
-            <input type="email" placeholder="Nhập email" />
+            <input type="email" placeholder="example@gmail.com" />
           </div>
 
           <div className="form-group">
-            <label>Địa chỉ nhận hàng</label>
-            <textarea placeholder="Nhập địa chỉ"></textarea>
+            <label>Địa chỉ giao hàng</label>
+            <textarea placeholder="Nhập địa chỉ nhận hàng..." />
           </div>
 
           <div className="form-group">
-            <label>Ghi chú</label>
-            <textarea placeholder="Ghi chú thêm"></textarea>
+            <label>Ghi chú cho đơn hàng (không bắt buộc)</label>
+            <textarea placeholder="Ví dụ: Giao hàng giờ hành chính..." />
           </div>
 
-          <h2>Phương thức thanh toán</h2>
+          <h2>Hình Thức Thanh Toán</h2>
 
           <div className="payment-method">
             <label>
-              <input type="radio" name="payment" />
-              Thanh toán khi nhận hàng (COD)
+              <input type="radio" name="payment" defaultChecked />
+              <span> Thanh toán khi nhận hàng (COD)</span>
             </label>
 
             <label>
               <input type="radio" name="payment" />
-              Chuyển khoản ngân hàng
+              <span> Chuyển khoản ngân hàng</span>
             </label>
 
             <label>
               <input type="radio" name="payment" />
-              Ví điện tử
+              <span> Thanh toán qua ví điện tử (MoMo, ZaloPay)</span>
             </label>
           </div>
 
-          <button className="checkout-btn">
+          {/* ✅ FIX CHỖ NÀY */}
+          <button className="checkout-btn" onClick={handleOrder}>
             Đặt Hàng Ngay
           </button>
         </div>
 
-        {/* Right */}
+        {/* Đơn hàng */}
         <div className="order-summary">
-          <h2>Đơn hàng của bạn</h2>
+          <h2>Chi Tiết Đơn Hàng</h2>
 
           <div className="product-item">
             <span>CPU AMD Ryzen 5 5600</span>
@@ -120,9 +133,13 @@ const Checkout = () => {
           </div>
 
           <div className="summary-row total">
-            <span>Tổng cộng</span>
+            <span>Tổng thanh toán</span>
             <span>6.660.000đ</span>
           </div>
+
+          <button className="summary-btn">
+            Xem lại giỏ hàng
+          </button>
         </div>
       </div>
     </div>
