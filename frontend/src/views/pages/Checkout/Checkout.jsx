@@ -1,10 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Checkout.css";
 
 const Checkout = () => {
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    // Sau này:
+    // 1. Validate thông tin khách hàng
+    // 2. Gọi API tạo đơn hàng
+    // 3. Nếu tạo đơn thành công thì chuyển trang
+
+    navigate("/order-success");
+  };
+
   return (
     <div className="checkout-container">
-
       {/* Breadcrumb */}
       <div className="cart-breadcrumb">
         <nav>
@@ -17,9 +27,7 @@ const Checkout = () => {
               <Link to="/cart">Giỏ hàng</Link>
             </li>
 
-            <li className="breadcrumb-item active">
-              Thanh toán
-            </li>
+            <li className="breadcrumb-item active">Thanh toán</li>
           </ol>
         </nav>
       </div>
@@ -51,19 +59,19 @@ const Checkout = () => {
 
           <div className="form-group">
             <label>Địa chỉ nhận hàng</label>
-            <textarea placeholder="Nhập địa chỉ"></textarea>
+            <textarea placeholder="Nhập địa chỉ" />
           </div>
 
           <div className="form-group">
             <label>Ghi chú</label>
-            <textarea placeholder="Ghi chú thêm"></textarea>
+            <textarea placeholder="Ghi chú thêm" />
           </div>
 
           <h2>Phương thức thanh toán</h2>
 
           <div className="payment-method">
             <label>
-              <input type="radio" name="payment" />
+              <input type="radio" name="payment" defaultChecked />
               Thanh toán khi nhận hàng (COD)
             </label>
 
@@ -78,7 +86,11 @@ const Checkout = () => {
             </label>
           </div>
 
-          <button className="checkout-btn">
+          <button
+            type="button"
+            className="checkout-btn"
+            onClick={handleCheckout}
+          >
             Đặt Hàng Ngay
           </button>
         </div>

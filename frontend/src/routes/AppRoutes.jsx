@@ -4,6 +4,7 @@ import Home from "../views/pages/Home/Home";
 import Auth from "../views/pages/Auth/Auth";
 import Cart from "../views/pages/Cart/Cart";
 import Checkout from "../views/pages/Checkout/Checkout";
+import OrderSuccess from "../views/pages/OrderSuccess/OrderSuccess";
 import AdminRoutes from "./AdminRoutes";
 
 function AppRoutes() {
@@ -14,6 +15,7 @@ function AppRoutes() {
       <Route path="/auth" element={<Auth />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
+      <Route path="/order-success" element={<OrderSuccess />} />
 
       {/* Toàn bộ trang quản trị */}
       <Route path="/admin/*" element={<AdminRoutes />} />
