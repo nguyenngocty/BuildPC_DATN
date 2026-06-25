@@ -1,0 +1,353 @@
+/* =========================================
+   VARIABLES (Biến màu sắc)
+========================================= */
+:root {
+  --forge-red: #c9182b;
+  --forge-red-light: #fce8e9;
+  --forge-blue-light: #e6f0ff;
+  --forge-teal: #17a2b8;
+  --forge-teal-light: #e0f6f9;
+  --forge-pink-bg: #fff5f6;
+  --forge-gray-bg: #fdfdfd;
+  --text-dark: #222;
+  --text-muted: #666;
+}
+
+/* =========================================
+   BASE UTILITIES
+========================================= */
+.about-page {
+  font-family: inherit;
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-primary-forge { color: var(--forge-red); }
+.text-primary { color: #0d6efd; }
+.text-danger { color: var(--forge-red); }
+.text-teal { color: var(--forge-teal); }
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.about-hero-section {
+  padding: 80px 0;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-content, .hero-image-box {
+  flex: 1;
+}
+
+.badge-forgepc {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--forge-red-light);
+  color: var(--forge-red);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 40px; /* Tạo khoảng cách rộng rãi giữa 2 link giống ảnh */
+  align-items: center; /* Đảm bảo 2 thẻ chữ thẳng hàng tuyệt đối */
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-forge-primary {
+  background-color: var(--forge-red);
+  color: #fff;
+  border: 1px solid var(--forge-red);
+}
+
+.btn-forge-primary:hover {
+  background-color: #a81223;
+}
+
+.btn-forge-outline {
+  background-color: transparent;
+  color: var(--forge-red);
+  border: 1px solid #ddd;
+}
+
+.btn-forge-outline:hover {
+  border-color: var(--forge-red);
+  color: var(--forge-red);
+}
+
+.icon-large {
+  font-size: 1.5rem;
+}
+
+/* Hero Image */
+.hero-image-wrapper {
+  background-color: var(--forge-pink-bg);
+  padding: 20px;
+}
+
+.hero-img {
+  width: 100%;
+  display: block;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Style cho link Khám phá linh kiện */
+.hero-link-primary {
+  color: var(--text-dark);
+}
+
+.hero-link-primary:hover {
+  color: var(--forge-red);
+}
+
+.hero-link-primary .icon-right {
+  margin-left: 8px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease; /* Hiệu ứng chuyển động cho mũi tên */
+}
+
+/* Khi hover vào link, mũi tên sẽ trượt nhẹ sang phải 5px */
+.hero-link-primary:hover .icon-right {
+  transform: translateX(5px);
+}
+
+/* Style cho link PC Builder Tool */
+.hero-link-secondary {
+  color: var(--text-muted);
+}
+
+.hero-link-secondary:hover {
+  color: var(--forge-red);
+}
+
+/* =========================================
+   SECTIONS & HEADINGS
+========================================= */
+.vision-mission-section {
+  padding: 60px 0;
+}
+
+.core-values-section {
+  padding: 80px 0;
+  background-color: var(--forge-pink-bg);
+}
+
+.partners-section {
+  padding: 80px 0;
+  margin-bottom: 40px;
+}
+
+.section-header {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-header.center {
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.heading-underline {
+  width: 50px;
+  height: 3px;
+  background-color: var(--forge-red);
+  margin-top: 10px;
+}
+
+.section-header.center .heading-underline {
+  margin: 10px auto 0;
+}
+
+.section-subheading {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.mb-large {
+  margin-bottom: 50px;
+}
+
+/* =========================================
+   CARDS & GRIDS
+========================================= */
+/* Grid 2 cột: 60% - 40% */
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+}
+
+/* Grid 3 cột đều nhau */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.custom-card {
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.card-vision-2025 {
+  background-color: var(--forge-pink-bg);
+}
+
+.custom-card.text-center {
+  text-align: center;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bg-light-blue { background-color: var(--forge-blue-light); }
+.bg-light-red { background-color: var(--forge-red-light); }
+.bg-light-teal { background-color: var(--forge-teal-light); }
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.value-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.font-sm {
+  font-size: 0.95rem;
+}
+
+/* =========================================
+   PARTNERS
+========================================= */
+.partners-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.partner-logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #a0a0a0;
+  letter-spacing: 1px;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+.partner-logo:hover {
+  color: var(--text-dark);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Cho Mobile/Tablet)
+========================================= */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .custom-card {
+    padding: 30px 20px;
+  }
+}
