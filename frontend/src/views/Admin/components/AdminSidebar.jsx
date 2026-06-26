@@ -18,8 +18,8 @@ const menuItems = [
     icon: "bi-box-seam",
   },
   {
-    label: "Khách hàng",
-    to: "/admin/customers",
+    label: "Người dùng",
+    to: "/admin/users",
     icon: "bi-people",
   },
   {
