@@ -850,44 +850,156 @@ body {
   font-weight: 800;
 }
 
-.footer {
-  border-radius: 0;
-  margin-top: 30px;
-  padding: 45px 0 20px;
-  background: #111827;
-  color: white;
-}
+/* =========================
+   FOOTER - MODERN 2026
+========================= */
 
-.footer p {
-  color: #cbd5e1;
-  margin-bottom: 8px;
-}
-
-.newsletter {
-  display: flex;
-  background: white;
-  border-radius: 12px;
+.app-footer {
+  background: linear-gradient(135deg, #0f172a, #111827);
+  color: #e2e8f0;
+  padding: 70px 0 25px;
+  margin-top: 40px;
+  position: relative;
   overflow: hidden;
 }
 
-.newsletter input {
-  border: none;
-  padding: 12px;
-  width: 100%;
-  outline: none;
+/* glow background effect */
+.app-footer::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(239, 35, 60, 0.25), transparent 60%);
+  filter: blur(30px);
 }
 
-.newsletter button {
-  border: none;
-  background: var(--primary);
-  color: white;
-  padding: 0 16px;
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+/* GRID thay bootstrap */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+}
+
+/* column */
+.footer-col h4.footer-brand {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.footer-desc {
+  margin-top: 12px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* titles */
+.footer-title {
+  font-size: 14px;
   font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.copyright {
-  text-align: center;
+/* list */
+.footer-list {
+  list-style: none;
+  padding: 0;
   margin: 0;
+}
+
+.footer-list li {
+  color: #94a3b8;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  position: relative;
+}
+
+/* hover effect */
+.footer-list li:hover {
+  color: #ef233c;
+  transform: translateX(6px);
+}
+
+/* underline animation */
+.footer-list li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #ef233c;
+  transition: 0.3s ease;
+}
+
+.footer-list li:hover::after {
+  width: 40%;
+}
+
+/* newsletter */
+.footer-newsletter {
+  display: flex;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.footer-newsletter:hover {
+  box-shadow: 0 0 0 3px rgba(239, 35, 60, 0.15);
+}
+
+.footer-newsletter input {
+  flex: 1;
+  padding: 12px 14px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.footer-newsletter input::placeholder {
+  color: #94a3b8;
+}
+
+.footer-newsletter button {
+  background: linear-gradient(135deg, #ef233c, #c9182b);
+  border: none;
+  color: white;
+  padding: 0 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.footer-newsletter button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+/* bottom */
+.footer-bottom {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  color: #64748b;
+  font-size: 13px;
 }
 
 @media (max-width: 992px) {
