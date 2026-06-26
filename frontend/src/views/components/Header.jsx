@@ -1,123 +1,130 @@
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+
 function Header() {
   return (
-    <>
-      <header className="top-header">
-        <div className="container d-flex justify-content-between align-items-center">
-          <div>
-            <i className="bi bi-telephone-fill"></i> Hotline: <b>1900 1234</b>
+    <header className="header">
+      {/* TOP BAR */}
+      <div className="topbar">
+        <div className="container">
+          <div className="topbar-left">
+            <i className="bi bi-telephone-fill"></i>
+            <span>
+              Hotline: <b>1900 1234</b>
+            </span>
           </div>
-          <div>
-            <i className="bi bi-person-circle"></i> Đăng nhập / Đăng ký
+
+          <div className="topbar-right">
+            <i className="bi bi-person-circle"></i>
+            <span>Đăng nhập</span>
+            <span className="divider">/</span>
+            <span>Đăng ký</span>
           </div>
         </div>
-      </header>
+      </div>
 
-      <nav className="navbar navbar-expand-lg main-navbar sticky-top">
-        <div className="container">
-          <a className="navbar-brand brand" href="/">
+      {/* MAIN HEADER */}
+      <nav className="navbar">
+        <div className="container navbar-inner">
+          {/* BRAND */}
+          <Link className="brand" to="/">
             <span className="brand-icon">
               <i className="bi bi-cpu-fill"></i>
             </span>
-            <span>
+            <span className="brand-text">
               Build<span>PC</span>
             </span>
-          </a>
-
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menu"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-
-          <div className="collapse navbar-collapse" id="menu">
-            <div className="search-box mx-lg-4 my-3 my-lg-0">
-              <select>
+          </Link>
+          {/* SEARCH */}
+          <div className="pc-search">
+            <div className="pc-search__filter">
+              <select className="pc-search__select">
                 <option>Tất cả</option>
                 <option>CPU</option>
                 <option>VGA</option>
                 <option>RAM</option>
+                <option>Mainboard</option>
+                <option>SSD</option>
               </select>
-              <input
-                type="text"
-                placeholder="Tìm CPU Intel i5, VGA RTX 5060..."
-              />
-              <button>
-                <i className="bi bi-search"></i>
-              </button>
             </div>
 
-            <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Trang chủ
-                </a>
-              </li>
-
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="/"
-                  data-bs-toggle="dropdown"
-                >
-                  Sản phẩm
-                </a>
-                <ul className="dropdown-menu">
-                  {[
-                    "CPU",
-                    "Mainboard",
-                    "VGA",
-                    "RAM",
-                    "SSD",
-                    "Nguồn",
-                    "Case",
-                    "Tản nhiệt",
-                    "Màn hình",
-                    "Gaming Gear",
-                  ].map((item) => (
-                    <li key={item}>
-                      <a className="dropdown-item" href="/">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Tin tức
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Giới thiệu
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Liên hệ
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a className="btn build-btn" href="/">
-                  Build PC
-                </a>
-              </li>
-
-              <li className="nav-item icon-link">
-                <i className="bi bi-cart3"></i>
-              </li>
-            </ul>
+            <input
+              name="search"
+              type="text"
+              className="pc-search__input"
+              placeholder="Tìm CPU Intel i5, VGA RTX 5060..."
+            />
+            <button className="pc-search__btn">
+              <i className="bi bi-search"></i>
+            </button>
           </div>
+
+          {/* MENU */}
+          <ul className="menu">
+            <li>
+              <NavLink to="/" className="nav-link">
+                Trang chủ
+              </NavLink>
+            </li>
+
+            <li className="dropdown">
+              <span className="nav-link">Sản phẩm</span>
+
+              <div className="dropdown-menu">
+                {[
+                  "CPU",
+                  "Mainboard",
+                  "VGA",
+                  "RAM",
+                  "SSD",
+                  "Nguồn",
+                  "Case",
+                  "Tản nhiệt",
+                  "Màn hình",
+                  "Gaming Gear",
+                ].map((item) => (
+                  <Link key={item} to="/" className="dropdown-item">
+                    {item}
+                  </Link>
+                ))}
+              </div>
+            </li>
+
+            <li>
+              <NavLink to="/" className="nav-link">
+                Tin tức
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/" className="nav-link">
+                Giới thiệu
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/" className="nav-link">
+                Liên hệ
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/build-pc" className="build-btn">
+                <i className="bi bi-pc-display"></i>
+                <span>Build PC</span>
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/cart" className="cart">
+                <i className="bi bi-cart3"></i>
+                <span className="cart-count">3</span>
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </nav>
-    </>
+    </header>
   );
 }
 
